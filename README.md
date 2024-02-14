@@ -5,5 +5,10 @@ The data can be found in link: https://drive.google.com/drive/folders/1k8SeEARwV
 
 To run the code and recreate experiments:
 
-1. Find and download AKGE repository: https://github.com/nari97/AugmentedKGE
-2. Collect predictions - Run Python/
+1. Collect predictions - Run AugmentedKGE/AugmentedKGE/MaterializeRanks.py
+2. Filter Top-k predictions - Run Python/FilterTopK.py
+3. Run AMIE Inference pattern analysis - Run GradleProjects/Inference/EvaluateAMIEPatterns
+4. Run Asymmetry Inference Pattern analysis - Run GradleProjects/Inference/EvaluateAsymmetryPatterns
+5. Run Intersection Inference Pattern analysis - Run GradleProjects/Inference/EvaluateIntersectionPatterns
+6. Compute results - Run GradleProjects/Inference/ComputeResults
+
