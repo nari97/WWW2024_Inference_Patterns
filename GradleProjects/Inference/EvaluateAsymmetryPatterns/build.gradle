@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'org.neo4j:neo4j:4.4.10'
+    implementation project(':RuleUtilities')
+    implementation project(':DataLoader')
+    implementation project(':Inference:EvaluateAMIEPatterns')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(JavaVersion.VERSION_15 as String)
+    }
+}
+
+mainClassName = 'EvaluateAsymmetryPatterns'
+//Extra comment
+tasks.withType(JavaExec) {
+    // set the maximum heap size to 2 GB
+    jvmArgs = ['-Xmx128g']
+}
